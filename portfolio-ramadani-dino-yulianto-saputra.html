@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="id" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ramadani Dino Yulianto Saputra - Mahasiswa Teknik Informatika</title>
+  <meta name="description" content="Memadukan logika komputasi fundamental (Python, Java, C/C++) dengan kepekaan estetika desain grafis dan video editing.">
+  <meta property="og:title" content="Ramadani Dino Yulianto Saputra - Mahasiswa Teknik Informatika">
+  <meta property="og:description" content="Memadukan logika komputasi fundamental (Python, Java, C/C++) dengan kepekaan estetika desain grafis dan video editing.">
+  <meta property="og:type" content="website">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              emerald: '#10b981',
+              cyan: '#06b6d4',
+              violet: '#8b5cf6',
+              dark: '#070b14',
+              card: '#0b1120',
+              border: '#1e293b'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    }
+    .glow-neon {
+      box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.25);
+    }
+    .bg-grid {
+      background-size: 32px 32px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+  </style>
+</head>
+<body class="bg-[#070b14] text-slate-100 antialiased selection:bg-emerald-500/30 selection:text-emerald-300">
+
+  <!-- ========================================== -->
+  <!-- 1. NAVIGATION BAR                          -->
+  <!-- ========================================== -->
+  <header class="fixed top-0 left-0 right-0 z-40 bg-[#070b14]/85 backdrop-blur-md border-b border-slate-800/80">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-8">
+      
+      <!-- Brand Wordmark -->
+      <a href="#hero" class="text-base font-bold tracking-tight text-white flex items-center gap-2 whitespace-nowrap shrink-0 group">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 group-hover:scale-125 transition-transform"></span>
+        <span>Ramadani Dino Yulianto Saputra</span>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center gap-7 text-xs uppercase tracking-wider font-medium text-slate-400">
+        <a href="#about" class="hover:text-emerald-400 transition-colors whitespace-nowrap shrink-0">Tentang</a>
+        <a href="#skills" class="hover:text-emerald-400 transition-colors whitespace-nowrap shrink-0">Keahlian</a>
+        <a href="#projects" class="hover:text-emerald-400 transition-colors whitespace-nowrap shrink-0">Portofolio</a>
+        <a href="#experience" class="hover:text-emerald-400 transition-colors whitespace-nowrap shrink-0">Pengalaman</a>
+        <a href="#contact" class="hover:text-emerald-400 transition-colors whitespace-nowrap shrink-0">Kontak</a>
+      </nav>
+
+      <!-- Primary Action & Mobile Toggle -->
+      <div class="flex items-center gap-3 shrink-0">
+        <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-4 py-2 text-xs font-semibold text-slate-950 bg-emerald-400 hover:bg-emerald-300 rounded-lg transition-colors whitespace-nowrap shadow-sm shadow-emerald-500/20">
+          Kirim Pesan
+        </a>
+        <button id="mobileMenuBtn" aria-label="Toggle menu" class="md:hidden p-2 text-slate-400 hover:text-white rounded-lg border border-slate-800">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileMenu" class="hidden md:hidden border-b border-slate-800 bg-[#070b14]/95 px-6 py-4 flex flex-col gap-3 text-sm">
+      <a href="#about" class="mobile-link text-slate-300 hover:text-emerald-400 py-1">Tentang</a>
+      <a href="#skills" class="mobile-link text-slate-300 hover:text-emerald-400 py-1">Keahlian</a>
+      <a href="#projects" class="mobile-link text-slate-300 hover:text-emerald-400 py-1">Portofolio</a>
+      <a href="#experience" class="mobile-link text-slate-300 hover:text-emerald-400 py-1">Pengalaman</a>
+      <a href="#contact" class="mobile-link text-slate-300 hover:text-emerald-400 py-1">Kontak</a>
+    </div>
+  </header>
+
+  <!-- ========================================== -->
+  <!-- 2. HERO / CV SHOWCASE SECTION              -->
+  <!-- ========================================== -->
+  <section id="hero" class="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden bg-grid border-b border-slate-800/80">
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+      
+      <!-- Status Badge -->
+      <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-950/40 text-emerald-300 text-xs font-medium mb-8">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>Curriculum Vitae (CV) & Profil Mahasiswa Aktif</span>
+      </div>
+
+      <!-- CV Card -->
+      <div class="p-6 sm:p-8 md:p-10 rounded-3xl bg-[#0b1120]/90 border border-slate-800 shadow-2xl mb-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          
+          <!-- Foto Profil -->
+          <div class="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left">
+            <div class="relative">
+              <div class="w-44 h-56 sm:w-52 sm:h-64 rounded-2xl overflow-hidden border-2 border-emerald-500/40 bg-slate-900 shadow-xl shadow-emerald-500/10">
+                <img
+                  src="/assets/aistudio/photo_2026-11-12_04-06-20_4b5cd3e9.jpg"
+                  alt="Foto Profil Ramadani Dino Yulianto Saputra"
+                  class="w-full h-full object-cover object-[center_15%]"
+                  onerror="this.src='/assets/aistudio/photo_2026-11-12_04-06-20_4b5cd3e9.jpg'"
+                />
+              </div>
+              <div class="mt-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-900 border border-slate-800 text-[11px] text-slate-300 font-mono">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+                <span>Mahasiswa Aktif</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rincian CV -->
+          <div class="lg:col-span-8">
+            <div class="text-xs font-mono uppercase tracking-widest text-emerald-400 font-semibold mb-1">
+              Biodata Resmi
+            </div>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-2">
+              Ramadani Dino Yulianto Saputra
+            </h1>
+            <div class="text-base sm:text-lg font-medium text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-cyan-400 to-violet-400">
+              Mahasiswa Teknik Informatika
+            </div>
+            <p class="text-xs sm:text-sm text-slate-400 mt-2 max-w-2xl leading-relaxed mb-6">
+              Memadukan logika komputasi fundamental (Python, Java, C/C++) dengan kepekaan estetika desain grafis dan video editing.
+            </p>
+
+            <!-- Data Diri Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 p-4 sm:p-5 rounded-2xl bg-slate-900/80 border border-slate-800 mb-6 text-xs">
+              <div>
+                <div class="text-slate-500 font-mono uppercase text-[10px]">Umur / Usia</div>
+                <div class="text-slate-200 font-semibold text-sm font-mono">20 Tahun</div>
+              </div>
+              <div>
+                <div class="text-slate-500 font-mono uppercase text-[10px]">Tingkat Pendidikan</div>
+                <div class="text-slate-200 font-semibold text-sm">Semester 3 (Mahasiswa Aktif)</div>
+              </div>
+              <div>
+                <div class="text-slate-500 font-mono uppercase text-[10px]">Program Studi & Kampus</div>
+                <div class="text-slate-200 font-semibold truncate">Universitas Muhammadiyah Malang (UMM)</div>
+              </div>
+              <div>
+                <div class="text-slate-500 font-mono uppercase text-[10px]">Domisili</div>
+                <div class="text-slate-200 font-semibold">Kalimantan Tengah, Palangkaraya</div>
+              </div>
+              <div class="sm:col-span-2 pt-2 border-t border-slate-800">
+                <div class="text-slate-500 font-mono uppercase text-[10px]">Keahlian Utama</div>
+                <div class="text-slate-200 font-medium text-xs">Python, Java (OOP), C/C++, Desain Grafis & Video Editing</div>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-wrap items-center gap-3">
+              <a href="#projects" class="px-4 py-2.5 text-xs font-bold text-slate-950 bg-emerald-400 hover:bg-emerald-300 rounded-lg transition-colors shadow-md shadow-emerald-500/20">
+                Lihat Proyek Nyata
+              </a>
+              <a href="#contact" class="px-4 py-2.5 text-xs font-semibold text-slate-200 hover:text-white bg-slate-900 hover:bg-slate-800 border border-slate-700/80 rounded-lg transition-colors">
+                Mulai Diskusi & Kolaborasi
+              </a>
+              <button onclick="copyEmailToClipboard('ramadanidino249@gmail.com')" class="px-3.5 py-2.5 text-xs font-medium text-slate-400 hover:text-slate-200 bg-slate-950/70 border border-slate-800 rounded-lg transition-colors font-mono">
+                Salin Email
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Metrics Row -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-slate-800/80">
+        <div>
+          <div class="text-2xl sm:text-3xl font-extrabold text-white font-mono tabular-nums">20 Tahun</div>
+          <div class="text-xs text-slate-500 mt-1 uppercase tracking-wider">Usia Mahasiswa</div>
+        </div>
+        <div>
+          <div class="text-2xl sm:text-3xl font-extrabold text-white font-mono tabular-nums">Semester 3</div>
+          <div class="text-xs text-slate-500 mt-1 uppercase tracking-wider">Jenjang Akademik</div>
+        </div>
+        <div>
+          <div class="text-2xl sm:text-3xl font-extrabold text-white font-mono tabular-nums">Logic & Visual</div>
+          <div class="text-xs text-slate-500 mt-1 uppercase tracking-wider">Fokus Kompetensi</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 3. ABOUT SECTION                           -->
+  <!-- ========================================== -->
+  <section id="about" class="py-20 md:py-28 max-w-6xl mx-auto px-6 border-b border-slate-800/80">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      
+      <div class="lg:col-span-4">
+        <span class="text-xs font-mono uppercase tracking-widest text-emerald-400 font-semibold">01 · Profil Mahasiswa</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white mt-2 mb-4">Tentang Saya</h2>
+        <div class="p-6 rounded-2xl bg-[#0b1120] border border-slate-800 text-sm text-slate-400 space-y-4">
+          <div>
+            <div class="text-xs text-slate-500">Program Studi</div>
+            <div class="text-slate-200 font-medium">Teknik Informatika</div>
+            <div class="text-xs text-slate-400">Universitas Muhammadiyah Malang</div>
+          </div>
+          <div>
+            <div class="text-xs text-slate-500">Domisili</div>
+            <div class="text-slate-200 font-medium">Kalimantan Tengah, Palangkaraya</div>
+          </div>
+          <div>
+            <div class="text-xs text-slate-500">Status</div>
+            <div class="text-emerald-400 font-medium">Mahasiswa Aktif · Terbuka untuk Magang &amp; Kolaborasi</div>
+          </div>
+          <div>
+            <div class="text-xs text-slate-500">Email Kampus</div>
+            <div class="text-slate-200 font-medium font-mono text-xs truncate">ramadanidino249@gmail.com</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-8 space-y-6 text-slate-300 leading-relaxed text-base">
+        <p class="text-lg font-medium text-slate-200 leading-relaxed">
+          Saya adalah mahasiswa Teknik Informatika yang memiliki antusiasme mendalam pada logika pemrograman terstruktur, algoritma, serta produksi media visual interaktif. Terbiasa membangun aplikasi berbasis C/C++, Java, dan Python, sekaligus merancang aset visual serta menyunting video kreatif untuk menyampaikan pesan dengan daya tarik tinggi dan akan terus berkembang seiring waktu.
+        </p>
+        <p>
+          Bagi saya, memahami pemrograman di level fundamental (seperti manipulasi memori dan pointer di C/C++, struktur data, dan OOP di Java/Python) adalah kunci membuat sistem yang efisien. Di sisi lain, kemampuan desain visual dan video editing memberi nilai tambah luar biasa dalam memvisualisasikan karya dan berkolaborasi secara komunikatif.
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-6">
+          <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-800">
+            <div class="text-emerald-400 font-mono text-sm font-semibold mb-1">01. Logika & Algoritma</div>
+            <div class="text-sm font-bold text-white mb-2">Struktur Teratur</div>
+            <p class="text-xs text-slate-400">Pemrograman terstruktur dengan C, C++, Java, dan Python untuk pemecahan masalah komputasi teruji.</p>
+          </div>
+          <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-800">
+            <div class="text-cyan-400 font-mono text-sm font-semibold mb-1">02. Data & File I/O</div>
+            <div class="text-sm font-bold text-white mb-2">Integrasi File CSV</div>
+            <p class="text-xs text-slate-400">Pengelolaan data persisten melalui manipulasi berkas CSV terstruktur dan dasar basis data.</p>
+          </div>
+          <div class="p-5 rounded-xl bg-slate-900/60 border border-slate-800">
+            <div class="text-violet-400 font-mono text-sm font-semibold mb-1">03. Multimedia Kreatif</div>
+            <div class="text-sm font-bold text-white mb-2">Desain & Video</div>
+            <p class="text-xs text-slate-400">Desain grafis komunikatif, aset visual estetis, dan editing video ritmik dinamis.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 4. SKILLS SECTION                          -->
+  <!-- ========================================== -->
+  <section id="skills" class="py-20 md:py-28 max-w-6xl mx-auto px-6 border-b border-slate-800/80">
+    <div class="mb-12">
+      <span class="text-xs font-mono uppercase tracking-widest text-emerald-400 font-semibold">02 · Keahlian & Teknologi</span>
+      <h2 class="text-2xl sm:text-3xl font-bold text-white mt-2">Keahlian Pemrograman & Multimedia</h2>
+      <p class="text-sm text-slate-400 mt-2 max-w-xl">Peralatan teknis dan tools kreatif yang saya gunakan sehari-hari.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+        <div class="p-6 rounded-2xl bg-[#0b1120] border border-slate-800">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-base font-bold text-white">Pemrograman Fundamental &amp; Logika</h3>
+            <span class="text-xs text-slate-500 font-mono">5 Keahlian</span>
+          </div>
+          <p class="text-xs text-slate-400 mb-6">Penguasaan konsep struktur data, algoritma, modular programming, dan paradigma OOP.</p>
+          
+          <div class="space-y-4">
+            
+              <div>
+                <div class="flex justify-between text-xs mb-1.5">
+                  <span class="font-medium text-slate-200 flex items-center gap-1.5">
+                    Python
+                    <span class="text-emerald-400 text-[10px] uppercase font-mono">★ Utama</span>
+                  </span>
+                  <span class="text-slate-500 font-mono">88%</span>
+                </div>
+                <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-gradient-to-r from-emerald-500 via-cyan-500 to-violet-500 rounded-full" style="width: 88%"></div>
+                </div>
+              </div>
+            
+              <div>
+                <div class="flex justify-between text-xs mb-1.5">
+                  <span class="font-medium text-slate-200 flex items-center gap-1.5">
+                    Java (OOP &amp; GUI)
+                    <span class="text-emerald-400 text-[10px] uppercase font-mono">★ Utama</span>
+                  </span>
+                  <span class="text-slate-500 font-mono">85%</span>
+                </div>
+                <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-gradient-to-r from-emerald-500 via-cyan-500 to-violet-500 rounded-full" style="width: 85%"></div>
+                </div>
+              </div>
+            
+              <div>
+                <div class="flex justify-between text-xs mb-1.5">
+                  <span class="font-medium text-slate-200 flex items-center gap-1.5">
+                    C &amp; C++
+                    <span class="text-emerald-400 text-[10px] uppercase font-mono">★ Utama</span>
+                  </span>
+                  <span class="text-slate-500 font-mono">86%</span>
+                </div>
+                <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-gradient-to-r from-emerald-500 via-cyan-500 to-violet-500 rounded-full" style="width: 86%"></div>
+                </div>
+              </div>
+            
+              <div>
+                <div class="flex justify-between text-xs mb-1.5">
+                  <span class="font-medium text-slate-200 flex items-center gap-1.5">
+                    Algoritma &amp; Struktur Data
+                    <span class="text-emerald-400 text-[10px] uppercase font-mono">★ Utama</span>
+                  </span>
+                  <span class="text-slate-500 font-mono">84%</span>
+                </div>
+                <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-gradient-to-r from-emerald-500 via-cyan-500 to-violet-500 rounded-full" style="width: 84%"></div>
+                </div>
+              </div>
+            
+              <div>
+                <div class="flex justify-between text-xs mb-1.5">
+                  <span class="font-medium text-slate-200 flex items-center gap-1.5">
+                    Logika Pemrograman Terstruktur
+                    
+                  </span>
+                  <span class="text-slate-500 font-mono">90%</span>
+                </div>
+                <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-gradient-to-r from-emerald-500 via-cyan-500 to-violet-500 rounded-full" style="width: 90%"></div>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="p-6 rounded-2xl bg-[#0b1120] border border-slate-800">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-base font-bold text-white">Desain Grafis &amp; Video Editing</h3>
+            <span class="text-xs text-slate-500 font-mono">5 Keahlian</span>
+          </div>
+          <p class="text-xs text-slate-400 mb-6">Penciptaan konten visual estetis, komposisi warna, tata letak, dan ritme video multimedia.</p>
+          
+          <div class="space-y-4">
+            
+              <div>
+                <div class="flex justify-between text-xs mb-1.5">
+                  <span class="font-medium text-slate-200 flex items-center gap-1.5">
+                    Desain Grafis (Visual Branding)
+                    <span class="text-emerald-400 text-[10px] uppercase font-mono">★ Utama</span>
+                  </span>
+                  <span class="text-slate-500 font-mono">90%</span>
+                </div>
+                <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-gradient-to-r from-emerald-500 via-cyan-500 to-violet-500 rounded-full" style="width: 90%"></div>
+                </div>
+              </div>
+            
+              <div>
+                <div class="flex justify-between text-xs mb-1.5">
+                  <span class="font-medium text-slate-200 flex items-center gap-1.5">
+                    Video Editing &amp; Motion Rhythm
+                    <span class="text-emerald-400 text-[10px] uppercase font-mono">★ Utama</span>
+                  </span>
+                  <span class="text-slate-500 font-mono">88%</span>
+                </div>
+                <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-gradient-to-r from-emerald-500 via-cyan-500 to-violet-500 rounded-full" style="width: 88%"></div>
+                </div>
+              </div>
+            
+              <div>
+                <div class="flex justify-between text-xs mb-1.5">
+                  <span class="font-medium text-slate-200 flex items-center gap-1.5">
+                    Adobe Premiere Pro / CapCut
+                    <span class="text-emerald-400 text-[10px] uppercase font-mono">★ Utama</span>
+                  </span>
+                  <span class="text-slate-500 font-mono">86%</span>
+                </div>
+                <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-gradient-to-r from-emerald-500 via-cyan-500 to-violet-500 rounded-full" style="width: 86%"></div>
+                </div>
+              </div>
+            
+              <div>
+                <div class="flex justify-between text-xs mb-1.5">
+                  <span class="font-medium text-slate-200 flex items-center gap-1.5">
+                    Figma &amp; UI/UX Wireframing
+                    
+                  </span>
+                  <span class="text-slate-500 font-mono">84%</span>
+                </div>
+                <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-gradient-to-r from-emerald-500 via-cyan-500 to-violet-500 rounded-full" style="width: 84%"></div>
+                </div>
+              </div>
+            
+              <div>
+                <div class="flex justify-between text-xs mb-1.5">
+                  <span class="font-medium text-slate-200 flex items-center gap-1.5">
+                    Canva &amp; Photoshop
+                    
+                  </span>
+                  <span class="text-slate-500 font-mono">88%</span>
+                </div>
+                <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-gradient-to-r from-emerald-500 via-cyan-500 to-violet-500 rounded-full" style="width: 88%"></div>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="p-6 rounded-2xl bg-[#0b1120] border border-slate-800">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-base font-bold text-white">Manajemen Data &amp; File I/O</h3>
+            <span class="text-xs text-slate-500 font-mono">3 Keahlian</span>
+          </div>
+          <p class="text-xs text-slate-400 mb-6">Penyimpanan data persisten melalui manipulasi berkas dan dasar sistem basis data.</p>
+          
+          <div class="space-y-4">
+            
+              <div>
+                <div class="flex justify-between text-xs mb-1.5">
+                  <span class="font-medium text-slate-200 flex items-center gap-1.5">
+                    File Handling (CSV, TXT, File I/O)
+                    <span class="text-emerald-400 text-[10px] uppercase font-mono">★ Utama</span>
+                  </span>
+                  <span class="text-slate-500 font-mono">92%</span>
+                </div>
+                <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-gradient-to-r from-emerald-500 via-cyan-500 to-violet-500 rounded-full" style="width: 92%"></div>
+                </div>
+              </div>
+            
+              <div>
+                <div class="flex justify-between text-xs mb-1.5">
+                  <span class="font-medium text-slate-200 flex items-center gap-1.5">
+                    Dasar Basis Data Relasional (MySQL/SQL)
+                    
+                  </span>
+                  <span class="text-slate-500 font-mono">80%</span>
+                </div>
+                <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-gradient-to-r from-emerald-500 via-cyan-500 to-violet-500 rounded-full" style="width: 80%"></div>
+                </div>
+              </div>
+            
+              <div>
+                <div class="flex justify-between text-xs mb-1.5">
+                  <span class="font-medium text-slate-200 flex items-center gap-1.5">
+                    Normalisasi &amp; Pemodelan Data Entitas
+                    
+                  </span>
+                  <span class="text-slate-500 font-mono">82%</span>
+                </div>
+                <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-gradient-to-r from-emerald-500 via-cyan-500 to-violet-500 rounded-full" style="width: 82%"></div>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+        <div class="p-6 rounded-2xl bg-[#0b1120] border border-slate-800">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-base font-bold text-white">Tools &amp; Lingkungan Kerja</h3>
+            <span class="text-xs text-slate-500 font-mono">4 Keahlian</span>
+          </div>
+          <p class="text-xs text-slate-400 mb-6">Peralatan pengembangan perangkat lunak, version control, dan kolaborasi tim.</p>
+          
+          <div class="space-y-4">
+            
+              <div>
+                <div class="flex justify-between text-xs mb-1.5">
+                  <span class="font-medium text-slate-200 flex items-center gap-1.5">
+                    Git &amp; GitHub (Version Control)
+                    <span class="text-emerald-400 text-[10px] uppercase font-mono">★ Utama</span>
+                  </span>
+                  <span class="text-slate-500 font-mono">85%</span>
+                </div>
+                <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-gradient-to-r from-emerald-500 via-cyan-500 to-violet-500 rounded-full" style="width: 85%"></div>
+                </div>
+              </div>
+            
+              <div>
+                <div class="flex justify-between text-xs mb-1.5">
+                  <span class="font-medium text-slate-200 flex items-center gap-1.5">
+                    VS Code &amp; Compiler (GCC/G++, JDK)
+                    
+                  </span>
+                  <span class="text-slate-500 font-mono">88%</span>
+                </div>
+                <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-gradient-to-r from-emerald-500 via-cyan-500 to-violet-500 rounded-full" style="width: 88%"></div>
+                </div>
+              </div>
+            
+              <div>
+                <div class="flex justify-between text-xs mb-1.5">
+                  <span class="font-medium text-slate-200 flex items-center gap-1.5">
+                    Linux Terminal &amp; CLI Environment
+                    
+                  </span>
+                  <span class="text-slate-500 font-mono">80%</span>
+                </div>
+                <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-gradient-to-r from-emerald-500 via-cyan-500 to-violet-500 rounded-full" style="width: 80%"></div>
+                </div>
+              </div>
+            
+              <div>
+                <div class="flex justify-between text-xs mb-1.5">
+                  <span class="font-medium text-slate-200 flex items-center gap-1.5">
+                    Kolaborasi Proyek Tim
+                    <span class="text-emerald-400 text-[10px] uppercase font-mono">★ Utama</span>
+                  </span>
+                  <span class="text-slate-500 font-mono">90%</span>
+                </div>
+                <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-gradient-to-r from-emerald-500 via-cyan-500 to-violet-500 rounded-full" style="width: 90%"></div>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+      
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 5. PROJECTS SECTION                        -->
+  <!-- ========================================== -->
+  <section id="projects" class="py-20 md:py-28 max-w-6xl mx-auto px-6 border-b border-slate-800/80">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+      <div>
+        <span class="text-xs font-mono uppercase tracking-widest text-emerald-400 font-semibold">03 · Portofolio Karya Nyata</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white mt-2">Proyek Pilihan & Studi Kasus</h2>
+        <p class="text-sm text-slate-400 mt-2 max-w-xl">Implementasi rekayasa perangkat lunak nyata dan proyek kreatif multimedia.</p>
+      </div>
+
+      <!-- Filter Controls -->
+      <div class="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0" id="projectFilters">
+        <button onclick="filterProjects('all')" class="project-filter-btn active px-3 py-1.5 text-xs font-medium rounded-lg transition-colors bg-emerald-500/20 text-emerald-300 border border-emerald-500/40" data-cat="all">Semua</button>
+        <button onclick="filterProjects('team')" class="project-filter-btn px-3 py-1.5 text-xs font-medium rounded-lg transition-colors bg-slate-900 text-slate-400 hover:text-white border border-slate-800" data-cat="team">Kolaborasi Tim</button>
+        <button onclick="filterProjects('c_cpp')" class="project-filter-btn px-3 py-1.5 text-xs font-medium rounded-lg transition-colors bg-slate-900 text-slate-400 hover:text-white border border-slate-800" data-cat="c_cpp">Bahasa C & CSV</button>
+        <button onclick="filterProjects('python_java')" class="project-filter-btn px-3 py-1.5 text-xs font-medium rounded-lg transition-colors bg-slate-900 text-slate-400 hover:text-white border border-slate-800" data-cat="python_java">Python & Algoritma</button>
+        <button onclick="filterProjects('creative')" class="project-filter-btn px-3 py-1.5 text-xs font-medium rounded-lg transition-colors bg-slate-900 text-slate-400 hover:text-white border border-slate-800" data-cat="creative">Desain & Video</button>
+      </div>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="projectsGrid">
+      
+        <div class="project-card group p-6 rounded-2xl bg-[#0b1120] border border-slate-800 hover:border-emerald-500/40 transition-all flex flex-col justify-between" data-category="team">
+          <div>
+            <div class="flex items-center justify-between text-xs text-slate-500 mb-3">
+              <span class="font-mono text-emerald-400">Kolaborasi Tim Mahasiswa</span>
+              <span class="font-mono">2025/2026</span>
+            </div>
+            
+            <h3 class="text-xl font-bold text-white group-hover:text-emerald-300 transition-colors mb-1">
+              Sistem Informasi Manajemen Pengadilan
+            </h3>
+            <p class="text-xs text-cyan-400/90 font-mono mb-4">Aplikasi Kolaborasi Tim Pengelolaan Berkas Perkara &amp; Jadwal Sidang</p>
+            <p class="text-sm text-slate-300 mb-6 leading-relaxed">Aplikasi manajemen alur persidangan yang dikembangkan bersama tim mahasiswa untuk mencatat nomor perkara, jadwal sidang pengadilan, dan data pihak berperkara secara terorganisasi.</p>
+
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              
+                <span class="px-2 py-0.5 text-[11px] font-mono bg-slate-900 border border-slate-800 text-slate-300 rounded">
+                  Java / Python
+                </span>
+              
+                <span class="px-2 py-0.5 text-[11px] font-mono bg-slate-900 border border-slate-800 text-slate-300 rounded">
+                  Basis Data
+                </span>
+              
+                <span class="px-2 py-0.5 text-[11px] font-mono bg-slate-900 border border-slate-800 text-slate-300 rounded">
+                  Git Collaboration
+                </span>
+              
+                <span class="px-2 py-0.5 text-[11px] font-mono bg-slate-900 border border-slate-800 text-slate-300 rounded">
+                  UI Design System
+                </span>
+              
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between pt-4 border-t border-slate-800/80">
+            <button onclick="openProjectModal('sistem-pengadilan')" class="text-xs font-semibold text-emerald-400 hover:text-emerald-300 flex items-center gap-1">
+              <span>Pelajari Detail & Alur Sistem</span>
+              <span>→</span>
+            </button>
+            <a href="https://github.com/dinosaurus249" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-500 hover:text-slate-300 font-mono">
+              Repository ↗
+            </a>
+          </div>
+        </div>
+      
+        <div class="project-card group p-6 rounded-2xl bg-[#0b1120] border border-slate-800 hover:border-emerald-500/40 transition-all flex flex-col justify-between" data-category="c_cpp">
+          <div>
+            <div class="flex items-center justify-between text-xs text-slate-500 mb-3">
+              <span class="font-mono text-emerald-400">Bahasa C · CSV File I/O</span>
+              <span class="font-mono">2024/2025</span>
+            </div>
+            
+            <h3 class="text-xl font-bold text-white group-hover:text-emerald-300 transition-colors mb-1">
+              Sistem Manajemen Perpustakaan (C &amp; CSV)
+            </h3>
+            <p class="text-xs text-cyan-400/90 font-mono mb-4">Library Management System dengan Integrasi File Handling CSV Persisten</p>
+            <p class="text-sm text-slate-300 mb-6 leading-relaxed">Aplikasi sirkulasi buku perpustakaan yang dibangun menggunakan bahasa C dengan penyimpanan data katalog dan riwayat peminjaman langsung ke berkas CSV terstruktur.</p>
+
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              
+                <span class="px-2 py-0.5 text-[11px] font-mono bg-slate-900 border border-slate-800 text-slate-300 rounded">
+                  Bahasa C
+                </span>
+              
+                <span class="px-2 py-0.5 text-[11px] font-mono bg-slate-900 border border-slate-800 text-slate-300 rounded">
+                  C++
+                </span>
+              
+                <span class="px-2 py-0.5 text-[11px] font-mono bg-slate-900 border border-slate-800 text-slate-300 rounded">
+                  File Handling (CSV)
+                </span>
+              
+                <span class="px-2 py-0.5 text-[11px] font-mono bg-slate-900 border border-slate-800 text-slate-300 rounded">
+                  Algoritma &amp; Struktur Data
+                </span>
+              
+                <span class="px-2 py-0.5 text-[11px] font-mono bg-slate-900 border border-slate-800 text-slate-300 rounded">
+                  CLI/TUI
+                </span>
+              
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between pt-4 border-t border-slate-800/80">
+            <button onclick="openProjectModal('perpustakaan-c-csv')" class="text-xs font-semibold text-emerald-400 hover:text-emerald-300 flex items-center gap-1">
+              <span>Pelajari Detail & Alur Sistem</span>
+              <span>→</span>
+            </button>
+            <a href="https://github.com/dinosaurus249" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-500 hover:text-slate-300 font-mono">
+              Repository ↗
+            </a>
+          </div>
+        </div>
+      
+        <div class="project-card group p-6 rounded-2xl bg-[#0b1120] border border-slate-800 hover:border-emerald-500/40 transition-all flex flex-col justify-between" data-category="python_java">
+          <div>
+            <div class="flex items-center justify-between text-xs text-slate-500 mb-3">
+              <span class="font-mono text-emerald-400">Python Core &amp; Algoritma</span>
+              <span class="font-mono">2025</span>
+            </div>
+            
+            <h3 class="text-xl font-bold text-white group-hover:text-emerald-300 transition-colors mb-1">
+              Algoritma Komputasi &amp; Scripting Python
+            </h3>
+            <p class="text-xs text-cyan-400/90 font-mono mb-4">Eksplorasi Algoritma Pemrograman, Pemrosesan Data &amp; Automasi</p>
+            <p class="text-sm text-slate-300 mb-6 leading-relaxed">Kumpulan program komputasi algoritma, pemrosesan file teks, dan automasi tugas berulang menggunakan bahasa pemrograman Python.</p>
+
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              
+                <span class="px-2 py-0.5 text-[11px] font-mono bg-slate-900 border border-slate-800 text-slate-300 rounded">
+                  Python
+                </span>
+              
+                <span class="px-2 py-0.5 text-[11px] font-mono bg-slate-900 border border-slate-800 text-slate-300 rounded">
+                  Algoritma &amp; Struktur Data
+                </span>
+              
+                <span class="px-2 py-0.5 text-[11px] font-mono bg-slate-900 border border-slate-800 text-slate-300 rounded">
+                  Modular Scripting
+                </span>
+              
+                <span class="px-2 py-0.5 text-[11px] font-mono bg-slate-900 border border-slate-800 text-slate-300 rounded">
+                  File Handling
+                </span>
+              
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between pt-4 border-t border-slate-800/80">
+            <button onclick="openProjectModal('python-algoritma-automasi')" class="text-xs font-semibold text-emerald-400 hover:text-emerald-300 flex items-center gap-1">
+              <span>Pelajari Detail & Alur Sistem</span>
+              <span>→</span>
+            </button>
+            <a href="https://github.com/dinosaurus249" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-500 hover:text-slate-300 font-mono">
+              Repository ↗
+            </a>
+          </div>
+        </div>
+      
+        <div class="project-card group p-6 rounded-2xl bg-[#0b1120] border border-slate-800 hover:border-emerald-500/40 transition-all flex flex-col justify-between" data-category="creative">
+          <div>
+            <div class="flex items-center justify-between text-xs text-slate-500 mb-3">
+              <span class="font-mono text-emerald-400">Creative &amp; Multimedia</span>
+              <span class="font-mono">2024 — Sekarang</span>
+            </div>
+            
+            <h3 class="text-xl font-bold text-white group-hover:text-emerald-300 transition-colors mb-1">
+              Karya Desain Grafis &amp; Video Editing
+            </h3>
+            <p class="text-xs text-cyan-400/90 font-mono mb-4">Visual Branding, Materi Publikasi Media &amp; Editing Video Ritmik</p>
+            <p class="text-sm text-slate-300 mb-6 leading-relaxed">Portofolio karya visual kreatif mencakup desain poster, aset antarmuka pengguna (UI), serta editing video multimedia dinamis dengan ritme audio yang presisi.</p>
+
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              
+                <span class="px-2 py-0.5 text-[11px] font-mono bg-slate-900 border border-slate-800 text-slate-300 rounded">
+                  Desain Grafis
+                </span>
+              
+                <span class="px-2 py-0.5 text-[11px] font-mono bg-slate-900 border border-slate-800 text-slate-300 rounded">
+                  Video Editing
+                </span>
+              
+                <span class="px-2 py-0.5 text-[11px] font-mono bg-slate-900 border border-slate-800 text-slate-300 rounded">
+                  Premiere Pro / CapCut
+                </span>
+              
+                <span class="px-2 py-0.5 text-[11px] font-mono bg-slate-900 border border-slate-800 text-slate-300 rounded">
+                  Figma
+                </span>
+              
+                <span class="px-2 py-0.5 text-[11px] font-mono bg-slate-900 border border-slate-800 text-slate-300 rounded">
+                  Canva
+                </span>
+              
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between pt-4 border-t border-slate-800/80">
+            <button onclick="openProjectModal('karya-desain-video-editing')" class="text-xs font-semibold text-emerald-400 hover:text-emerald-300 flex items-center gap-1">
+              <span>Pelajari Detail & Alur Sistem</span>
+              <span>→</span>
+            </button>
+            <a href="https://github.com/dinosaurus249" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-500 hover:text-slate-300 font-mono">
+              Repository ↗
+            </a>
+          </div>
+        </div>
+      
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 6. EXPERIENCE SECTION                      -->
+  <!-- ========================================== -->
+  <section id="experience" class="py-20 md:py-28 max-w-6xl mx-auto px-6 border-b border-slate-800/80">
+    <div class="mb-12">
+      <span class="text-xs font-mono uppercase tracking-widest text-emerald-400 font-semibold">04 · Pengalaman Proyek</span>
+      <h2 class="text-2xl sm:text-3xl font-bold text-white mt-2">Pengalaman Proyek & Kepemimpinan</h2>
+      <p class="text-sm text-slate-400 mt-2 max-w-xl">Rekam jejak kontribusi dalam tim mahasiswa, riset akademik, dan aktivitas multimedia.</p>
+    </div>
+
+    <div class="space-y-8 relative before:absolute before:inset-0 before:left-3 md:before:left-4 before:w-0.5 before:bg-slate-800">
+      
+        <div class="relative pl-10 md:pl-12">
+          <div class="absolute left-1.5 md:left-2.5 top-1.5 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-emerald-400 ring-4 ring-emerald-500/20"></div>
+          
+          <div class="p-6 rounded-2xl bg-[#0b1120] border border-slate-800">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+              <div>
+                <h3 class="text-base sm:text-lg font-bold text-white">Pengembang Sistem &amp; Kolaborator Tim</h3>
+                <div class="text-xs text-emerald-400 font-medium">Proyek Kolaborasi Mahasiswa (Sistem Pengadilan) · Malang, Jawa Timur</div>
+              </div>
+              <span class="text-xs font-mono text-slate-400 px-2.5 py-1 rounded bg-slate-900 border border-slate-800 w-fit">
+                2025 — Sekarang
+              </span>
+            </div>
+
+            <p class="text-sm text-slate-300 mb-4 leading-relaxed">Berkolaborasi aktif bersama rekan tim mahasiswa dalam merancang arsitektur sistem, memprogram modul perkara sidang, dan menguji fungsionalitas aplikasi pengadilan.</p>
+
+            <ul class="space-y-2 mb-4 text-xs text-slate-400">
+              
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-400 mt-0.5">▹</span>
+                  <span>Merancang alur pendataan berkas perkara dan pencatatan jadwal ruang persidangan.</span>
+                </li>
+              
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-400 mt-0.5">▹</span>
+                  <span>Mengkoordinasikan integrasi modul kode bersama rekan tim menggunakan Git dan GitHub.</span>
+                </li>
+              
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-400 mt-0.5">▹</span>
+                  <span>Menguji dan memvalidasi kebenaran input data perkara untuk meminimalkan bug sistem.</span>
+                </li>
+              
+            </ul>
+
+            <div class="flex flex-wrap gap-1.5 pt-3 border-t border-slate-800/80">
+              
+                <span class="text-[11px] font-mono text-slate-400 bg-slate-900 px-2 py-0.5 rounded">
+                  Kolaborasi Tim
+                </span>
+              
+                <span class="text-[11px] font-mono text-slate-400 bg-slate-900 px-2 py-0.5 rounded">
+                  Python / Java
+                </span>
+              
+                <span class="text-[11px] font-mono text-slate-400 bg-slate-900 px-2 py-0.5 rounded">
+                  Git &amp; GitHub
+                </span>
+              
+                <span class="text-[11px] font-mono text-slate-400 bg-slate-900 px-2 py-0.5 rounded">
+                  Desain Alur Sistem
+                </span>
+              
+            </div>
+          </div>
+        </div>
+      
+        <div class="relative pl-10 md:pl-12">
+          <div class="absolute left-1.5 md:left-2.5 top-1.5 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-slate-700"></div>
+          
+          <div class="p-6 rounded-2xl bg-[#0b1120] border border-slate-800">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+              <div>
+                <h3 class="text-base sm:text-lg font-bold text-white">Proyek Akademik Pemrograman Struktur Data &amp; Algoritma</h3>
+                <div class="text-xs text-emerald-400 font-medium">Teknik Informatika - Universitas Muhammadiyah Malang · Malang, Jawa Timur</div>
+              </div>
+              <span class="text-xs font-mono text-slate-400 px-2.5 py-1 rounded bg-slate-900 border border-slate-800 w-fit">
+                2024 — 2025
+              </span>
+            </div>
+
+            <p class="text-sm text-slate-300 mb-4 leading-relaxed">Membangun solusi perangkat lunak menggunakan bahasa pemrograman C, C++, dan Java dengan fokus pada pemahaman mendalam konsep dasar sistem komputer.</p>
+
+            <ul class="space-y-2 mb-4 text-xs text-slate-400">
+              
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-400 mt-0.5">▹</span>
+                  <span>Membangun Sistem Manajemen Perpustakaan berbasis C menggunakan manipulasi file CSV secara mandiri.</span>
+                </li>
+              
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-400 mt-0.5">▹</span>
+                  <span>Menerapkan konsep struct, dynamic memory allocation, pointer, serta algoritma searching dan sorting.</span>
+                </li>
+              
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-400 mt-0.5">▹</span>
+                  <span>Mendokumentasikan logika dan alur program secara terstruktur untuk pengujian akademik.</span>
+                </li>
+              
+            </ul>
+
+            <div class="flex flex-wrap gap-1.5 pt-3 border-t border-slate-800/80">
+              
+                <span class="text-[11px] font-mono text-slate-400 bg-slate-900 px-2 py-0.5 rounded">
+                  Bahasa C
+                </span>
+              
+                <span class="text-[11px] font-mono text-slate-400 bg-slate-900 px-2 py-0.5 rounded">
+                  C++
+                </span>
+              
+                <span class="text-[11px] font-mono text-slate-400 bg-slate-900 px-2 py-0.5 rounded">
+                  Java
+                </span>
+              
+                <span class="text-[11px] font-mono text-slate-400 bg-slate-900 px-2 py-0.5 rounded">
+                  File I/O CSV
+                </span>
+              
+                <span class="text-[11px] font-mono text-slate-400 bg-slate-900 px-2 py-0.5 rounded">
+                  Algoritma &amp; Struktur Data
+                </span>
+              
+            </div>
+          </div>
+        </div>
+      
+        <div class="relative pl-10 md:pl-12">
+          <div class="absolute left-1.5 md:left-2.5 top-1.5 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-emerald-400 ring-4 ring-emerald-500/20"></div>
+          
+          <div class="p-6 rounded-2xl bg-[#0b1120] border border-slate-800">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+              <div>
+                <h3 class="text-base sm:text-lg font-bold text-white">Creative Designer &amp; Multimedia Video Editor</h3>
+                <div class="text-xs text-emerald-400 font-medium">Freelance &amp; Konten Kreatif Digital · Malang, Jawa Timur</div>
+              </div>
+              <span class="text-xs font-mono text-slate-400 px-2.5 py-1 rounded bg-slate-900 border border-slate-800 w-fit">
+                2023 — Sekarang
+              </span>
+            </div>
+
+            <p class="text-sm text-slate-300 mb-4 leading-relaxed">Mengerjakan pembuatan materi visual grafis dan penyuntingan video multimedia untuk kebutuhan promosi, konten digital, dan portofolio kreatif.</p>
+
+            <ul class="space-y-2 mb-4 text-xs text-slate-400">
+              
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-400 mt-0.5">▹</span>
+                  <span>Membuat desain poster, banner grafis, dan aset media sosial dengan visual estetik yang komunikatif.</span>
+                </li>
+              
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-400 mt-0.5">▹</span>
+                  <span>Menyunting video dengan teknik pacing audio-visual, color grading, dan transisi modern.</span>
+                </li>
+              
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-400 mt-0.5">▹</span>
+                  <span>Menerjemahkan ide konsep menjadi karya visual yang rapi dan menarik perhatian penonton.</span>
+                </li>
+              
+            </ul>
+
+            <div class="flex flex-wrap gap-1.5 pt-3 border-t border-slate-800/80">
+              
+                <span class="text-[11px] font-mono text-slate-400 bg-slate-900 px-2 py-0.5 rounded">
+                  Desain Grafis
+                </span>
+              
+                <span class="text-[11px] font-mono text-slate-400 bg-slate-900 px-2 py-0.5 rounded">
+                  Video Editing
+                </span>
+              
+                <span class="text-[11px] font-mono text-slate-400 bg-slate-900 px-2 py-0.5 rounded">
+                  Premiere Pro / CapCut
+                </span>
+              
+                <span class="text-[11px] font-mono text-slate-400 bg-slate-900 px-2 py-0.5 rounded">
+                  Figma &amp; Canva
+                </span>
+              
+            </div>
+          </div>
+        </div>
+      
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 7. CONTACT TERMINAL                        -->
+  <!-- ========================================== -->
+  <section id="contact" class="py-20 md:py-28 max-w-6xl mx-auto px-6">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <span class="text-xs font-mono uppercase tracking-widest text-emerald-400 font-semibold">05 · Hubungi & Terhubung</span>
+      <p class="text-sm sm:text-base text-slate-400 mt-3 leading-relaxed">
+        Tertarik menawarkan peluang magang (internship), kolaborasi proyek rekayasa perangkat lunak mahasiswa, atau jasa desain grafis dan editing video? Pintu komunikasi selalu terbuka melalui kanal di bawah.
+      </p>
+    </div>
+
+    <!-- Contact Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-16">
+      
+      <!-- Email Card -->
+      <div class="p-6 rounded-2xl bg-[#0b1120] border border-slate-800 flex flex-col justify-between shadow-lg">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-mono text-emerald-400 uppercase font-semibold">Email Resmi</span>
+            <span class="text-[11px] font-mono text-emerald-400 bg-emerald-950/40 border border-emerald-500/20 px-2.5 py-0.5 rounded-full">Kanal Utama</span>
+          </div>
+          <div class="text-sm font-mono text-slate-200 mb-4 truncate">ramadanidino249@gmail.com</div>
+        </div>
+        <div class="flex items-center gap-3 pt-4 border-t border-slate-800">
+          <button onclick="copyEmailToClipboard('ramadanidino249@gmail.com')" class="flex-1 py-2 px-3 text-xs font-semibold text-emerald-400 hover:text-emerald-300 bg-emerald-950/40 border border-emerald-500/30 rounded-lg transition-colors">
+            Salin Alamat Email
+          </button>
+          <a href="mailto:ramadanidino249@gmail.com" class="py-2 px-3 text-xs font-medium text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-lg transition-colors">
+            Buka Email ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- GitHub Card -->
+      <div class="p-6 rounded-2xl bg-[#0b1120] border border-slate-800 flex flex-col justify-between shadow-lg">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-mono text-slate-300 uppercase font-semibold">GitHub Repositori</span>
+            <span class="text-[11px] font-mono text-slate-400 bg-slate-900 border border-slate-800 px-2.5 py-0.5 rounded-full">Source Code</span>
+          </div>
+          <p class="text-xs text-slate-400 mb-4">Repositori kode proyek pengadilan, sistem perpustakaan, dan script algoritma.</p>
+        </div>
+        <div class="pt-4 border-t border-slate-800">
+          <a href="https://github.com/dinosaurus249" target="_blank" rel="noopener noreferrer" class="block text-center py-2 px-3 text-xs font-semibold text-slate-200 hover:text-white bg-slate-900 border border-slate-800 rounded-lg transition-colors">
+            Kunjungi Profil GitHub ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- LinkedIn Card -->
+      <div class="p-6 rounded-2xl bg-[#0b1120] border border-slate-800 flex flex-col justify-between shadow-lg">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-mono text-slate-400 uppercase font-semibold">LinkedIn Network</span>
+            <span class="text-[11px] font-mono text-slate-500 bg-slate-900 border border-slate-800 px-2.5 py-0.5 rounded-full">Tidak Aktif</span>
+          </div>
+          <p class="text-xs text-slate-400 mb-4">Profil LinkedIn saat ini tidak aktif / belum tersedia untuk publik.</p>
+        </div>
+        <div class="pt-4 border-t border-slate-800">
+          <button type="button" onclick="showToast('Profil LinkedIn saat ini tidak aktif.')" class="w-full text-center py-2 px-3 text-xs font-semibold text-slate-500 hover:text-slate-400 bg-slate-900 border border-slate-800 rounded-lg cursor-default transition-colors">
+            LinkedIn (Tidak Tersedia)
+          </button>
+        </div>
+      </div>
+
+      <!-- Instagram Card -->
+      <div class="p-6 rounded-2xl bg-[#0b1120] border border-slate-800 flex flex-col justify-between shadow-lg">
+        <div>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-mono text-pink-400 uppercase font-semibold">Instagram</span>
+            <span class="text-[11px] font-mono text-pink-400 bg-pink-950/40 border border-pink-500/20 px-2.5 py-0.5 rounded-full">Karya Visual</span>
+          </div>
+          <p class="text-xs text-slate-400 mb-4">Portofolio visual kreatif, desain grafis, dan cuplikan karya editing video multimedia.</p>
+        </div>
+        <div class="pt-4 border-t border-slate-800">
+          <a href="https://www.instagram.com/menteri.hibernasi/" target="_blank" rel="noopener noreferrer" class="block text-center py-2 px-3 text-xs font-semibold text-pink-300 hover:text-white bg-pink-950/40 border border-pink-500/30 rounded-lg transition-colors">
+            Lihat di Instagram ↗
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer Copyright -->
+    <div class="mt-20 pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+      <div>
+        © <span id="currentYear">2026</span> Ramadani Dino Yulianto Saputra · Teknik Informatika UMM. All rights reserved.
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="#hero" class="hover:text-slate-300 transition-colors">Kembali ke Atas ↑</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 8. MODAL DETAIL PROYEK                     -->
+  <!-- ========================================== -->
+  <div id="projectModal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-black/80 backdrop-blur-sm p-4 sm:p-6 flex items-center justify-center">
+    <div class="relative w-full max-w-2xl bg-[#0b1120] border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl text-slate-200" onclick="event.stopPropagation()">
+      <button onclick="closeProjectModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white p-2 rounded-lg border border-slate-800">
+        ✕
+      </button>
+
+      <div class="text-xs font-mono text-emerald-400 mb-2" id="modalBadge"></div>
+      <h3 class="text-2xl font-bold text-white mb-1" id="modalTitle"></h3>
+      <div class="text-xs font-mono text-cyan-400 mb-4" id="modalSubtitle"></div>
+
+      <div class="text-sm text-slate-300 leading-relaxed mb-6" id="modalLongDesc"></div>
+
+      <div class="mb-6">
+        <h4 class="text-xs uppercase font-mono text-slate-400 font-semibold mb-3">Sorotan Arsitektur & Logika Sistem:</h4>
+        <ul class="space-y-2 text-xs text-slate-300" id="modalHighlights"></ul>
+      </div>
+
+      <div class="mb-6">
+        <h4 class="text-xs uppercase font-mono text-slate-400 font-semibold mb-2">Tech Stack:</h4>
+        <div class="flex flex-wrap gap-2" id="modalTechStack"></div>
+      </div>
+
+      <div class="flex items-center justify-end gap-3 pt-4 border-t border-slate-800">
+        <a id="modalGithubLink" href="#" target="_blank" rel="noopener noreferrer" class="px-4 py-2 text-xs font-semibold text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-lg transition-colors">
+          Lihat di GitHub
+        </a>
+        <button onclick="closeProjectModal()" class="px-4 py-2 text-xs font-semibold text-slate-950 bg-emerald-400 hover:bg-emerald-300 rounded-lg transition-colors">
+          Tutup
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="hidden fixed bottom-6 right-6 z-50 bg-slate-900 border border-emerald-500/40 text-emerald-300 px-4 py-3 rounded-xl shadow-xl text-xs flex items-center gap-2">
+    <span>✓</span>
+    <span id="toastText">Tersalin ke clipboard</span>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- 9. JAVASCRIPT LOGIC                        -->
+  <!-- ========================================== -->
+  <script>
+    // Data Proyek untuk Modal
+    const projectsData = [{"id":"sistem-pengadilan","title":"Sistem Informasi Manajemen Pengadilan","subtitle":"Aplikasi Kolaborasi Tim Pengelolaan Berkas Perkara & Jadwal Sidang","category":"team","description":"Aplikasi manajemen alur persidangan yang dikembangkan bersama tim mahasiswa untuk mencatat nomor perkara, jadwal sidang pengadilan, dan data pihak berperkara secara terorganisasi.","longDescription":"Sistem ini dibuat secara kolaboratif bersama tim rekan mahasiswa untuk mendigitalisasi administrasi pengadilan. Aplikasi ini memfasilitasi pendaftaran perkara baru, penetapan ruang sidang, jadwal agenda sidang, status perkara, serta data majelis hakim dan pihak yang berperkara secara transparan dan terstruktur.","architectureHighlights":["Kolaborasi tim terstruktur dengan pembagian modul backend, database, dan logika antarmuka","Pengelolaan entitas berkas perkara, klasifikasi pidana/perdata, dan jadwal persidangan","Validasi input nomor register perkara untuk menghindari redudansi data sidang","Pencarian data cepat berdasarkan nomor perkara atau nama pihak yang bersidang"],"techStack":["Java / Python","Basis Data","Git Collaboration","UI Design System"],"liveUrl":"https://github.com/dinosaurus249","githubUrl":"https://github.com/dinosaurus249","featured":true,"metricBadge":"Kolaborasi Tim Mahasiswa","year":"2025/2026"},{"id":"perpustakaan-c-csv","title":"Sistem Manajemen Perpustakaan (C & CSV)","subtitle":"Library Management System dengan Integrasi File Handling CSV Persisten","category":"c_cpp","description":"Aplikasi sirkulasi buku perpustakaan yang dibangun menggunakan bahasa C dengan penyimpanan data katalog dan riwayat peminjaman langsung ke berkas CSV terstruktur.","longDescription":"Proyek rekayasa perangkat lunak menggunakan bahasa pemrograman C yang mengimplementasikan modular programming, pointer, dynamic struct, dan file I/O. Sistem membaca dan menulis data buku serta transaksi peminjam secara persisten ke dalam berkas CSV (Comma-Separated Values) tanpa memerlukan DBMS eksternal yang berat, menghasilkan eksekusi yang sangat cepat dan hemat memori.","architectureHighlights":["Dynamic struct dan pointer array untuk efisiensi alokasi memori sistem","Custom CSV parser (pembacaan baris demi baris, splitting delimiter koma, dan validasi data)","Algoritma pencarian data buku berdasarkan ISBN, judul, atau nama penulis","Pencatatan sirkulasi peminjaman, batas pengembalian, dan kalkulasi denda keterlambatan"],"techStack":["Bahasa C","C++","File Handling (CSV)","Algoritma & Struktur Data","CLI/TUI"],"liveUrl":"https://github.com/dinosaurus249","githubUrl":"https://github.com/dinosaurus249","featured":true,"metricBadge":"Bahasa C · CSV File I/O","year":"2024/2025"},{"id":"python-algoritma-automasi","title":"Algoritma Komputasi & Scripting Python","subtitle":"Eksplorasi Algoritma Pemrograman, Pemrosesan Data & Automasi","category":"python_java","description":"Kumpulan program komputasi algoritma, pemrosesan file teks, dan automasi tugas berulang menggunakan bahasa pemrograman Python.","longDescription":"Proyek eksplorasi pemecahan masalah algoritma komputasi, sorting, searching, serta automasi manipulasi file menggunakan Python. Menerapkan clean code dan penanganan kesalahan (error handling) yang teliti.","architectureHighlights":["Implementasi algoritma pencarian dan pengurutan data terstruktur","Scripting automasi manipulasi data dan berkas teks","Modularitas kode dengan fungsi reusable dan penanganan exception yang baik"],"techStack":["Python","Algoritma & Struktur Data","Modular Scripting","File Handling"],"liveUrl":"https://github.com/dinosaurus249","githubUrl":"https://github.com/dinosaurus249","featured":true,"metricBadge":"Python Core & Algoritma","year":"2025"},{"id":"karya-desain-video-editing","title":"Karya Desain Grafis & Video Editing","subtitle":"Visual Branding, Materi Publikasi Media & Editing Video Ritmik","category":"creative","description":"Portofolio karya visual kreatif mencakup desain poster, aset antarmuka pengguna (UI), serta editing video multimedia dinamis dengan ritme audio yang presisi.","longDescription":"Menampilkan keahlian dalam memproduksi konten visual kreatif: mulai dari desain poster promosi, mockup antarmuka aplikasi, hingga editing video ritmik menggunakan Adobe Premiere Pro dan CapCut dengan sinkronisasi musik yang tepat, transisi halus, dan pewarnaan visual yang menarik.","architectureHighlights":["Desain grafis komunikatif berbasis prinsip tata letak visual, balance, dan tipografi rapi","Editing video dengan sinkronisasi ketukan audio (beat sync), transisi halus, dan pacing dinamis","Eksplorasi UI/UX wireframe dan prototipe aplikasi untuk kemudahan navigasi pengguna"],"techStack":["Desain Grafis","Video Editing","Premiere Pro / CapCut","Figma","Canva"],"liveUrl":"https://github.com/dinosaurus249","githubUrl":"https://github.com/dinosaurus249","featured":false,"metricBadge":"Creative & Multimedia","year":"2024 — Sekarang"}];
+
+    // Mobile Navigation Toggle
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Filter Projects
+    function filterProjects(cat) {
+      const cards = document.querySelectorAll('.project-card');
+      const buttons = document.querySelectorAll('.project-filter-btn');
+
+      buttons.forEach(btn => {
+        if (btn.dataset.cat === cat) {
+          btn.className = 'project-filter-btn px-3 py-1.5 text-xs font-medium rounded-lg transition-colors bg-emerald-500/20 text-emerald-300 border border-emerald-500/40';
+        } else {
+          btn.className = 'project-filter-btn px-3 py-1.5 text-xs font-medium rounded-lg transition-colors bg-slate-900 text-slate-400 hover:text-white border border-slate-800';
+        }
+      });
+
+      cards.forEach(card => {
+        if (cat === 'all' || card.dataset.category === cat) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Modal Details Logic
+    const modal = document.getElementById('projectModal');
+    function openProjectModal(id) {
+      const project = projectsData.find(p => p.id === id);
+      if (!project) return;
+
+      document.getElementById('modalBadge').innerText = project.metricBadge;
+      document.getElementById('modalTitle').innerText = project.title;
+      document.getElementById('modalSubtitle').innerText = project.subtitle;
+      document.getElementById('modalLongDesc').innerText = project.longDescription || project.description;
+
+      const highlightsList = document.getElementById('modalHighlights');
+      highlightsList.innerHTML = (project.architectureHighlights || [])
+        .map(h => '<li class="flex items-start gap-2"><span class="text-emerald-400">▹</span><span>' + h + '</span></li>')
+        .join('');
+
+      const stackContainer = document.getElementById('modalTechStack');
+      stackContainer.innerHTML = (project.techStack || [])
+        .map(t => '<span class="px-2.5 py-1 text-xs font-mono bg-slate-900 border border-slate-800 text-slate-300 rounded">' + t + '</span>')
+        .join('');
+
+      document.getElementById('modalGithubLink').href = project.githubUrl || '#';
+      modal.classList.remove('hidden');
+    }
+
+    function closeProjectModal() {
+      modal.classList.add('hidden');
+    }
+
+    modal.addEventListener('click', closeProjectModal);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeProjectModal();
+    });
+
+    // Copy Email to Clipboard
+    function copyEmailToClipboard(email) {
+      navigator.clipboard.writeText(email).then(() => {
+        showToast('Email ' + email + ' berhasil disalin!');
+      });
+    }
+
+    // Contact Form Handler
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('senderName').value;
+      showToast('Terima kasih ' + name + '! Pesan Anda telah tercatat.');
+      e.target.reset();
+    }
+
+    // Toast helper
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const text = document.getElementById('toastText');
+      text.innerText = msg;
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 3500);
+    }
+  </script>
+</body>
+</html>
